@@ -7,10 +7,10 @@ public class TivooSystem {
 	
 	
 	public void loadFile(String filename) {
-		
-		
-		
-		
+		Parser p = new GoogleParser(filename);
+		if(p.isThisType())
+			nodes = p.parseCalender();
+			
 	}
 	
 	

@@ -10,7 +10,7 @@ import org.joda.time.DateTime;
 
 import com.sun.jmx.snmp.tasks.Task;
 
-public class GoogleParser implements Parser {
+public class GoogleParser extends Parser {
 
 	File myFile;
 	SAXBuilder builder;
