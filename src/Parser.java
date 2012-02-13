@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 
-public interface Parser {
+public abstract class Parser {
 	
 	public boolean isThisType();
 	
