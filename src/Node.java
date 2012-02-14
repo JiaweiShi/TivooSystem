@@ -1,4 +1,4 @@
-import org.jdom.Element;
+
 import org.joda.time.DateTime;
 
 
@@ -26,4 +26,23 @@ public class Node implements Comparable<Node>{
 		else return 0; 
 	}	
 	
+	public DateTime getStart()
+	{
+	    return startDt;
+	}
+	
+	public DateTime getEnd()
+	{
+	    return endDt;
+	}
+	
+	public String getTitle()
+	{
+	   return title;
+	}
+	
+	public String getDescription()
+	{
+	    return description;
+	}
 }

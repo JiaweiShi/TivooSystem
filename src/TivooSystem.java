@@ -5,6 +5,9 @@ public class TivooSystem {
 
 	ArrayList<Node> nodes;
 	
+	public TivooSystem(){
+		nodes = new ArrayList<Node>();
+	}
 	
 	public void loadFile(String filename) {
 		Parser p = new GoogleParser(filename);
@@ -34,10 +37,8 @@ public class TivooSystem {
 	
 	
 	public void outputToHtml(String detailsFile, String summaryFile) {
-		
-		
-		
-		
+		SummaryPageHTMLWriter writer = new SummaryPageHTMLWriter();
+		writer.makeFile(detailsFile, summaryFile, nodes);	
 	}
 	
 }
