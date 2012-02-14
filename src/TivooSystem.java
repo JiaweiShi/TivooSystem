@@ -10,6 +10,10 @@ public class TivooSystem {
 		Parser p = new GoogleParser(filename);
 		if(p.isThisType())
 			nodes = p.parseCalender();
+		
+		p = new DukeParser(filename);
+		if (p.isThisType())
+			nodes = p.parseCalender();
 			
 	}
 	
