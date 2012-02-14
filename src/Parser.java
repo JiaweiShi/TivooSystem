@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 
-public interface Parser {
+public abstract class Parser {
 	
-	public boolean isThisType();
+	public abstract boolean isThisType();
 	
-	public ArrayList<Node> parseCalender();
+	public abstract ArrayList<Node> parseCalender();
 
 }
