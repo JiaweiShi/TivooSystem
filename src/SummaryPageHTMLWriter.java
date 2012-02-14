@@ -136,7 +136,7 @@ public class SummaryPageHTMLWriter {
             e.printStackTrace();
         }
     }
-    
+   
     public static void main(String[] args)
     {
         Node n = new Node( new DateTime(2012, 2, 14, 9, 45), new DateTime(2012, 2, 14, 10, 0), "Lemur walk", "walk with lemurs");
@@ -145,5 +145,6 @@ public class SummaryPageHTMLWriter {
         list.add(n);
         a.makeFile("output/details_dir", "summary.html", list);
     }
+    
 
 }
