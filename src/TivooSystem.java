@@ -5,7 +5,6 @@ public class TivooSystem {
 
 	ArrayList<Node> nodes;
 	
-	
 	public void loadFile(String filename) {
 		Parser p = new GoogleParser(filename);
 		if(p.isThisType())
