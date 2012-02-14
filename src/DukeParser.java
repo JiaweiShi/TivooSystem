@@ -14,9 +14,9 @@ import org.joda.time.format.DateTimeFormatter;
 
 public class DukeParser extends Parser {
 
-	File myFile;
-	SAXBuilder builder;
-	DateTimeFormatter fmt = DateTimeFormat.forPattern("M/d/yyyy");
+	private File myFile;
+	private SAXBuilder builder;
+	private DateTimeFormatter fmt = DateTimeFormat.forPattern("M/d/yyyy");
 	
 	public DukeParser(String filename) {
 		myFile = new File(filename);
