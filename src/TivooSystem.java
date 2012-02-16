@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 
@@ -23,24 +24,21 @@ public class TivooSystem {
 	
 	public void filterByKeyword(String keyword) {
 		Processor p = new Processor();
-		nodes = p.filterByKeyword(nodes, keyword);
+		ArrayList<Node> nodeForFilter = new ArrayList<Node>(nodes);
+		nodes = p.filterByKeyword(nodeForFilter, keyword);
 	}
 	
 	
-	public void filterByTime(String begDate, String endDate) {
+	public void filterByTime(String begDate,String endDate) {
 		Processor p = new Processor();
-		nodes = p.filterByDate(nodes, begDate, endDate);
+		ArrayList<Node> nodeForFilter = new ArrayList<Node>(nodes);
+		nodes = p.filterByDate(nodeForFilter, begDate, endDate);
 	}
 	
 	
 	public void outputToHtml(String detailsFile, String summaryFile) {
 		SummaryPageHTMLWriter writer = new SummaryPageHTMLWriter();
 		writer.makeFile(detailsFile, summaryFile, nodes);	
-	}
-	
-	public static void main(String[] args)
-	{
-		
 	}
 	
 }

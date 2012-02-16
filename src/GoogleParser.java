@@ -165,9 +165,9 @@ public class GoogleParser extends Parser {
 	private DateTime getEndTime(String input, DateTime startTime) {
 		if (input.startsWith("2")) {
 			String[] info = input.split(" ");
-			String durationInMinute = info[4].substring(0, 2);
-			int durationInInteger = stringToInteger(durationInMinute);
-			DateTime endTime = startTime.plusMinutes(durationInInteger);
+			int durationInSecond = stringToInteger(info[4].substring(0, 4));
+			int durationInMinute = durationInSecond/60;
+			DateTime endTime = startTime.plusMinutes(durationInMinute);
 			return endTime;
 		} else if (input.length() > 15) {
 			String[] info = input.split(" ");
