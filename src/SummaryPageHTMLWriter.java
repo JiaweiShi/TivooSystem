@@ -90,10 +90,13 @@ public class SummaryPageHTMLWriter {
     
     public void addEventToList(Ul list, Node event, String detailPageLocation)
     {
-        Li eventListElement = new  Li();
+    	Li eventListElement = new  Li();
         list.appendChild(eventListElement);
         A eventLink = new A();
         eventListElement.appendChild(eventLink);
+        P times = new P();
+        times.appendText(event.getStart().toString("hh:mm")+" - " + event.getEnd().toString("hh:mm"));
+        eventListElement.appendChild(times);       
         eventLink.setHref(detailPageLocation);
         eventLink.appendText(event.getTitle());
         

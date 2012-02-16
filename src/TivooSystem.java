@@ -22,17 +22,16 @@ public class TivooSystem {
 	
 	
 	public void filterByKeyword(String keyword) {
-		
-		
-		
+		Processor p = new Processor();
+		ArrayList<Node> nodeForFilter = new ArrayList<Node>(nodes);
+		nodes = p.filterByKeyword(nodeForFilter, keyword);
 	}
 	
 	
-	public void filterByTime(String date) {
-		
-		
-		
-		
+	public void filterByTime(String begDate,String endDate) {
+		Processor p = new Processor();
+		ArrayList<Node> nodeForFilter = new ArrayList<Node>(nodes);
+		nodes = p.filterByDate(nodeForFilter, begDate, endDate);
 	}
 	
 	
