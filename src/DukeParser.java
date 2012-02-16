@@ -16,7 +16,7 @@ public class DukeParser extends Parser {
 
 	private File myFile;
 	private SAXBuilder builder;
-	private DateTimeFormatter fmt = DateTimeFormat.forPattern("M/d/yyyy");
+	private DateTimeFormatter fmt = DateTimeFormat.forPattern("M/d/yyyy hh:mm:ss a");
 	
 	public DukeParser(String filename) {
 		myFile = new File(filename);
@@ -56,12 +56,12 @@ public class DukeParser extends Parser {
 	}
 
 	private DateTime getStartTime(Element calendar) {
-		String str = calendar.getChild("StartDate").getText();
+		String str = calendar.getChild("StartDate").getText() + " " + calendar.getChild("StartTime").getText();
 		return fmt.parseDateTime(str);
 	}
 	
 	private DateTime getEndTime(Element calendar) {
-		String str = calendar.getChild("EndDate").getText();
+		String str = calendar.getChild("EndDate").getText() + " " + calendar.getChild("EndTime").getText();
 		return fmt.parseDateTime(str);
 	}
 	
