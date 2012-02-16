@@ -10,7 +10,7 @@ public class Processor {
 		ArrayList<Node> filteredNodes = new ArrayList<Node>();
 		for(Node node : nodes)
 		{
-			String str = node.getDescription() + node.getTitle();
+			String str = node.getTitle();
 			if(str.contains(keyWord))
 				filteredNodes.add(node);
 		}
