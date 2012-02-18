@@ -35,41 +35,34 @@ public class GoogleParser extends Parser {
 	public String getFeedName() {
 		return "feed";
 	}
-
-	public ArrayList<Node> parseCalender(String filename) {
-		ArrayList<Node> task = new ArrayList<Node>();
-
-		try {
-			Document document = (Document) builder.build(new File(filename));
-			Element rootNode = document.getRootElement();
-			List list = rootNode.getChildren();
-
-			for (int i = 0; i < list.size(); i++) {
-				Element node = (Element) list.get(i);
-				if (node.getName().equals("entry")) {
-					List childrenList = node.getChildren();
-					Element element = getContentElement(childrenList);
-					String timeInfo = getTimeInfo(element);
-
-					DateTime start = getStartTime(timeInfo);
-					DateTime end = getEndTime(timeInfo, start);
-
-					String title = getTitleElement(childrenList).getText();
-					String description = getContentElement(childrenList)
-							.getText();
-					task.add(new Node(start, end, title, description));
-				}
-			}
-
-			return task;
-
-		} catch (IOException io) {
-			System.out.println(io.getMessage());
-		} catch (JDOMException jdomex) {
-			System.out.println(jdomex.getMessage());
-		}
-
-		return task;
+	
+	public String getChildName(){
+		return "entry";
+	}
+	
+	public DateTime getStartTime(Element entry){
+		List childrenList = entry.getChildren();
+		Element element = getContentElement(childrenList);
+		String timeInfo = getTimeInfo(element);
+		return startTime(timeInfo);
+	}
+	
+	public DateTime getEndTime(Element entry){
+		List childrenList = entry.getChildren();
+		Element element = getContentElement(childrenList);
+		String timeInfo = getTimeInfo(element);
+		DateTime startTime = startTime(timeInfo);
+		return endTime(timeInfo,startTime);
+	}
+	
+	public String getTitle(Element entry){
+		List childrenList = entry.getChildren();
+		return getTitleElement(childrenList).getText();
+	}
+	
+	public String getDescription(Element entry){
+		List childrenList = entry.getChildren();
+		return getContentElement(childrenList).getText();
 	}
 
 	private String getTimeInfo(Element element) {
@@ -141,7 +134,7 @@ public class GoogleParser extends Parser {
 			return 0;
 	}
 
-	private DateTime getStartTime(String timeInfo) {
+	private DateTime startTime(String timeInfo) {
 		int year = getYearInfo(timeInfo);
 		int month = getMonthInfo(timeInfo);
 		int day = getDayInfo(timeInfo);
@@ -151,7 +144,7 @@ public class GoogleParser extends Parser {
 
 	}
 
-	private DateTime getEndTime(String input, DateTime startTime) {
+	private DateTime endTime(String input, DateTime startTime) {
 		if (input.startsWith("2")) {
 			String[] info = input.split(" ");
 			int durationInSecond = stringToInteger(info[4].substring(0, 4));

@@ -42,7 +42,9 @@ public abstract class Parser {
 		try {
             Document doc = builder.build(new File(filename));
             Element root = doc.getRootElement();
-            List calendars = root.getChildren(getChildName());
+            //List calendars = root.getChildren(getChildName());
+            List oddCalendars = root.getChildren();
+            List<Element>calendars = filter(oddCalendars,getChildName());
             if (calendars.size()==0) {
             	throw new ParserException("File has no child tags", ParserException.Type.EMPTY_FILE);
             }
@@ -67,5 +69,14 @@ public abstract class Parser {
 	public abstract String getTitle(Element calendar);
 	
 	public abstract String getDescription(Element calendar);
+	
+	private List<Element> filter(List<Element> input,String key){
+		List<Element> result = new ArrayList<Element>();
+		for(Element n: input){
+			if(n.getName().equals(key))
+				result.add(n);
+		}
+		return result;
+	}
 
 }

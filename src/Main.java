@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args){
 		
 		TivooSystem t = new TivooSystem();
-		t.loadFile("DukeBasketBall.xml");
+		t.loadFile("googlecal.xml");
 		//t.filterByKeyword("CS 110");
 		//t.filterByTime("9/1/2011", "3/3/2012");
 		t.outputToHtml("details","summary.html");
