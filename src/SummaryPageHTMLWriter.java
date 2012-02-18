@@ -20,7 +20,7 @@ import com.hp.gagawa.java.elements.Title;
 import com.hp.gagawa.java.elements.Ul;
 
 
-public class SummaryPageHTMLWriter {
+public class SummaryPageHTMLWriter extends HTMLWriter {
     
     private static final TreeMap<Integer, String> dayMap = new TreeMap<Integer, String>();
     static      
