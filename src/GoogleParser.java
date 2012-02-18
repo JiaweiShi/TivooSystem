@@ -9,9 +9,7 @@ import org.jdom.input.SAXBuilder;
 import org.joda.time.DateTime;
 
 public class GoogleParser extends Parser {
-
-	File myFile;
-	SAXBuilder builder;
+	
 	HashMap<String, Integer> monthToNumber;
 
 	private static final HashMap<String, Integer> monthToInteger = new HashMap<String, Integer>();
@@ -30,28 +28,19 @@ public class GoogleParser extends Parser {
 		monthToInteger.put("Dec", 12);
 	}
 
-	public GoogleParser(String filename) {
-		myFile = new File(filename);
-		builder = new SAXBuilder();
+	public GoogleParser() {
+		super();
 	}
 
-	public boolean isThisType() {
-		try {
-			Document document = (Document) builder.build(myFile);
-			Element rootNode = document.getRootElement();
-			return (rootNode.getName().equals("feed"));
-		} catch (IOException io) {
-			return false;
-		} catch (JDOMException jdomex) {
-			return false;
-		}
+	public String getFeedName() {
+		return "feed";
 	}
 
-	public ArrayList<Node> parseCalender() {
+	public ArrayList<Node> parseCalender(String filename) {
 		ArrayList<Node> task = new ArrayList<Node>();
 
 		try {
-			Document document = (Document) builder.build(myFile);
+			Document document = (Document) builder.build(new File(filename));
 			Element rootNode = document.getRootElement();
 			List list = rootNode.getChildren();
 

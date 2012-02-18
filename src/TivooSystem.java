@@ -11,13 +11,13 @@ public class TivooSystem {
 	}
 	
 	public void loadFile(String filename) {
-		Parser p = new GoogleParser(filename);
-		if(p.isThisType())
-			nodes = p.parseCalender();
+		Parser p = new GoogleParser();
+		if(p.isThisType(filename))
+			nodes = p.parseCalender(filename);
 		
-		p = new DukeParser(filename);
-		if (p.isThisType())
-			nodes = p.parseCalender();
+		p = new DukeParser();
+		if (p.isThisType(filename))
+			nodes = p.parseCalender(filename);
 			
 	}
 	
