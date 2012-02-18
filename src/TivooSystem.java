@@ -5,19 +5,22 @@ import java.util.*;
 public class TivooSystem {
 
 	ArrayList<Node> nodes;
+	ArrayList<Parser> parsers = new ArrayList<Parser>();
 	
 	public TivooSystem(){
 		nodes = new ArrayList<Node>();
+		parsers.add(new GoogleParser());
+		parsers.add(new DukeParser());
 	}
 	
 	public void loadFile(String filename) {
-		Parser p = new GoogleParser();
-		if(p.isThisType(filename))
-			nodes = p.parseCalender(filename);
+		for (Parser p : parsers) {
+			if (p.isThisType(filename)) {
+				nodes = p.parseCalender(filename);
+				break;
+			}
+		}
 		
-		p = new DukeParser();
-		if (p.isThisType(filename))
-			nodes = p.parseCalender(filename);
 			
 	}
 	
