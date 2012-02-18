@@ -14,6 +14,7 @@ public class TivooSystem {
 	}
 	
 	public void loadFile(String filename) {
+<<<<<<< HEAD
 		for(Parser p : parsers){
 			if(p.isThisType(filename)){
 				nodes = p.parseCalender(filename);
@@ -21,6 +22,15 @@ public class TivooSystem {
 			}
 				
 		}
+=======
+		for (Parser p : parsers) {
+			if (p.isThisType(filename)) {
+				nodes = p.parseCalender(filename);
+				break;
+			}
+		}
+		
+>>>>>>> 7a62d93908fe8145eda39f5a9b5ecd6bdf0b2ed2
 			
 	}
 	
