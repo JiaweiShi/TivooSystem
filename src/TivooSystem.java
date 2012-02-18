@@ -19,9 +19,7 @@ public class TivooSystem {
 				nodes = p.parseCalender(filename);
 				break;
 			}
-		}
-		
-			
+		}			
 	}
 	
 	
