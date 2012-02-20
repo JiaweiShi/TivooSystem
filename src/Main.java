@@ -13,8 +13,8 @@ public class Main {
 		
 		TivooSystem t = new TivooSystem();
 		t.loadFile("DukeBasketBall.xml");
-		//t.filterByKeyword("CS 110");
-		//t.filterByTime("3/1/2012", "3/4/2012");
+		//t.filter("FilterByKeywords", "CS 110");
+		t.filter("FilterByDate", "3/1/2012", "3/4/2012");
 		t.outputToHtml("details","summary.html");
 			
 	}
