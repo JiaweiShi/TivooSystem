@@ -20,7 +20,7 @@ import com.hp.gagawa.java.elements.Title;
 import com.hp.gagawa.java.elements.Ul;
 
 
-public class SummaryPageHTMLWriter {
+public class SummaryPageHTMLWriter extends HTMLWriter {
     
     private static final TreeMap<Integer, String> dayMap = new TreeMap<Integer, String>();
     static      
@@ -36,20 +36,9 @@ public class SummaryPageHTMLWriter {
     
 
     
-    public void makeFile(String detailsFile, String summaryFile, ArrayList<Node> events)
+    public void makeBody(Body body, ArrayList<Node> events, String detailsFile)
     {
-        Html html = new Html();
-        Head head = new Head();   
         
-        html.appendChild( head );
-        
-        Title title = new Title();
-        title.appendChild( new Text("Summary Page") );
-        head.appendChild( title );
-        
-        Body body = new Body();
-        
-        html.appendChild( body );
         int count = 0;
         
         Ul[] dayList = new Ul[7];
@@ -79,72 +68,10 @@ public class SummaryPageHTMLWriter {
         }
         
         
-        try {
-            BufferedWriter out = new BufferedWriter(new FileWriter(summaryFile));
-            out.write(html.write());
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
     
-    public void addEventToList(Ul list, Node event, String detailPageLocation)
-    {
-        Li eventListElement = new  Li();
-        list.appendChild(eventListElement);
-        A eventLink = new A();
-        eventListElement.appendChild(eventLink);
-        eventLink.setHref(detailPageLocation);
-        eventLink.appendText(event.getTitle());
-        
-    }
-    
-    public void makeDetailsPage(Node event, String detailsFile)
-    {
-        Html html = new Html();
-        Head head = new Head();   
-        
-        html.appendChild( head );
-        
-        Title title = new Title();
-        title.appendChild( new Text(event.getTitle()+" Page") );
-        head.appendChild( title );
-        
-        Body body = new Body();          
-        html.appendChild( body );
-        
-        H3 heading = new H3();
-        body.appendChild(heading);
-        heading.appendText(event.getTitle());
-        
-        P eventInfo = new P();
-        body.appendChild(eventInfo);
-        eventInfo.appendText("Start time: "+ event.getStart().toString("MM/dd/yy hh:mm"));
-        eventInfo.appendChild(new Br());
-        eventInfo.appendText("End time: "+event.getEnd().toString("MM/dd/yy hh:mm"));
-        eventInfo.appendChild(new Br());
-        eventInfo.appendText("Description: "+event.getDescription());
-  
-        try 
-        {
-            BufferedWriter out = new BufferedWriter(new FileWriter(detailsFile));
-            out.write(html.write());
-            out.close();
-        } 
-        catch (IOException e) 
-        {
-            e.printStackTrace();
-        }
-    }
+
    
-    public static void main(String[] args)
-    {
-        Node n = new Node( new DateTime(2012, 2, 14, 9, 45), new DateTime(2012, 2, 14, 10, 0), "Lemur walk", "walk with lemurs");
-        SummaryPageHTMLWriter a = new SummaryPageHTMLWriter();
-        ArrayList<Node> list = new ArrayList<Node>();
-        list.add(n);
-        a.makeFile("output/details_dir", "summary.html", list);
-    }
-    
 
 }
