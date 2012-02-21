@@ -1,13 +1,14 @@
+package model;
 
 import org.joda.time.DateTime;
 
 
 public class Node implements Comparable<Node>{
 
-	DateTime startDt;
-	String title;
-	DateTime endDt;
-	String description;
+	private DateTime startDt;
+	private String title;
+	private DateTime endDt;
+	private String description;
 	
 	public Node(DateTime start, DateTime end, String t,String d) {
 		startDt = start;

@@ -1,3 +1,5 @@
+package parser;
+
 import org.jdom.Element;
 import org.joda.time.DateTime;
 
@@ -18,12 +20,12 @@ public class DukeParser extends Parser {
 
 	public DateTime getStartTime(Element calendar) {
 		String str = calendar.getChild("StartDate").getText() + " " + calendar.getChild("StartTime").getText();
-		return fmt.parseDateTime(str);
+		return getFmt().parseDateTime(str);
 	}
 	
 	public DateTime getEndTime(Element calendar) {
 		String str = calendar.getChild("EndDate").getText() + " " + calendar.getChild("EndTime").getText();
-		return fmt.parseDateTime(str);
+		return getFmt().parseDateTime(str);
 	}
 	
 	public String getTitle(Element calendar) {

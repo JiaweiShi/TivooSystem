@@ -1,3 +1,4 @@
+package parser;
 
 @SuppressWarnings("serial")
 public class ParserException extends RuntimeException {
