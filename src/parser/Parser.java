@@ -1,3 +1,6 @@
+package parser;
+import model.Node;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,11 +13,14 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import parser.ParserException.Type;
+
+
 
 public abstract class Parser {
 	
-	protected SAXBuilder builder;
-	protected DateTimeFormatter fmt = DateTimeFormat.forPattern("M/d/yyyy hh:mm:ss a");
+	private SAXBuilder builder;
+	private DateTimeFormatter fmt = DateTimeFormat.forPattern("M/d/yyyy hh:mm:ss a");
 	
 	public Parser() {
 		builder = new SAXBuilder();
@@ -76,6 +82,10 @@ public abstract class Parser {
 				result.add(n);
 		}
 		return result;
+	}
+	
+	protected DateTimeFormatter getFmt() {
+		return fmt;
 	}
 
 }

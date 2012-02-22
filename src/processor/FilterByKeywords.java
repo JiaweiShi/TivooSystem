@@ -1,4 +1,9 @@
+package processor;
+
 import java.util.ArrayList;
+
+import model.Node;
+
 
 
 public class FilterByKeywords extends Processor {

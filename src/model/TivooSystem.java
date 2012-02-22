@@ -1,11 +1,20 @@
+package model;
 import java.util.*;
 
+import output.HTMLWriter;
+import output.SummaryPageHTMLWriter;
+
+import parser.DukeParser;
+import parser.GoogleParser;
+import parser.Parser;
+import processor.Processor;
+import processor.ProcessorFactory;
 
 public class TivooSystem {
 
-	ArrayList<Node> nodes;
-	ArrayList<Parser> parsers = new ArrayList<Parser>();
-	Processor processor;
+	private ArrayList<Node> nodes;
+	private List<Parser> parsers = new ArrayList<Parser>();
+	private Processor processor;
 
 	public TivooSystem(){
 		nodes = new ArrayList<Node>();
@@ -30,7 +39,7 @@ public class TivooSystem {
 
 
 	public void outputToHtml(String detailsFile, String summaryFile) {
-		SummaryPageHTMLWriter writer = new SummaryPageHTMLWriter();
+		HTMLWriter writer = new SummaryPageHTMLWriter();
 		writer.makeFile(detailsFile, summaryFile, nodes);	
 	}
 }
