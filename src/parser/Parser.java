@@ -73,7 +73,7 @@ public abstract class Parser {
 	
 	public abstract String getDescription(Element calendar);
 	
-	public abstract HashMap getMap(Element calendar);
+	public abstract HashMap<String, ArrayList<String>> getMap(Element calendar);
 	
 	private List<Element> filter(List<Element> input,String key){
 		List<Element> result = new ArrayList<Element>();
