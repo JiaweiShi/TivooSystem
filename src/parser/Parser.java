@@ -1,10 +1,8 @@
 package parser;
 import model.Node;
-
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -57,7 +55,7 @@ public abstract class Parser {
             
             for (Object c : calendars) {         	
             	Element calendar = (Element) c;        	
-            	nodes.add(new Node(getStartTime(calendar), getEndTime(calendar), getTitle(calendar), getDescription(calendar)));         	
+            	nodes.add(new Node(getStartTime(calendar), getEndTime(calendar), getTitle(calendar), getDescription(calendar), getFeedName(), getMap(calendar)));         	
             }           
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,6 +72,8 @@ public abstract class Parser {
 	public abstract String getTitle(Element calendar);
 	
 	public abstract String getDescription(Element calendar);
+	
+	public abstract HashMap getMap(Element calendar);
 	
 	private List<Element> filter(List<Element> input,String key){
 		List<Element> result = new ArrayList<Element>();
