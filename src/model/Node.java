@@ -1,5 +1,7 @@
 package model;
 
+import java.util.*;
+
 import org.joda.time.DateTime;
 
 
@@ -9,6 +11,8 @@ public class Node implements Comparable<Node>{
 	private String title;
 	private DateTime endDt;
 	private String description;
+	private String type;
+	private HashMap<String, ArrayList<String>> map;
 	
 	public Node(DateTime start, DateTime end, String t,String d) {
 		startDt = start;
