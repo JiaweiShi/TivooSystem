@@ -1,5 +1,7 @@
 package model;
 
+import java.util.*;
+
 import org.joda.time.DateTime;
 
 
@@ -9,12 +11,16 @@ public class Node implements Comparable<Node>{
 	private String title;
 	private DateTime endDt;
 	private String description;
+	private String type;
+	private HashMap<String, ArrayList<String>> map;
 	
-	public Node(DateTime start, DateTime end, String t,String d) {
+	public Node(DateTime start, DateTime end, String t,String d, String n, HashMap m) {
 		startDt = start;
 		endDt = end;
 		description = d;
 		title = t;
+		map = m;
+		type = n;
 	}
 	
 	public boolean containKeyWord(String keyword){
@@ -45,5 +51,13 @@ public class Node implements Comparable<Node>{
 	public String getDescription()
 	{
 	    return description;
+	}
+	
+	public String getType(){
+		return type;
+	}
+	
+	public HashMap<String,ArrayList<String>> getMapInformation(){
+		return map;
 	}
 }

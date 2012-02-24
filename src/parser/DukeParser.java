@@ -1,5 +1,7 @@
 package parser;
 
+import java.util.*;
+
 import org.jdom.Element;
 import org.joda.time.DateTime;
 
@@ -34,5 +36,10 @@ public class DukeParser extends Parser {
 	
 	public String getDescription(Element calendar) {
 		return calendar.getChild("Description").getText();
+	}
+
+	public HashMap<String, ArrayList<String>> getMap(Element calendar) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
