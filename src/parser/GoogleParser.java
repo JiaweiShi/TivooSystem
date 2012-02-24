@@ -60,6 +60,10 @@ public class GoogleParser extends Parser {
 		List childrenList = entry.getChildren();
 		return getContentElement(childrenList).getText();
 	}
+	
+	public HashMap<String, ArrayList<String>> getMap(Element entry){
+		return null;
+	}
 
 	private String getTimeInfo(Element element) {
 		String info = element.getText();
@@ -76,6 +80,7 @@ public class GoogleParser extends Parser {
 		else
 			return null;
 	}
+	
 
 	private int getYearInfo(String input) {
 		if (input.startsWith("2"))
@@ -161,16 +166,6 @@ public class GoogleParser extends Parser {
 		}
 	}
 
-	private int stringToInteger(String input) {
-		int result = 0;
-		int mul = 1;
-		for (int i = input.length() - 1; i >= 0; i--) {
-			int value = Integer.parseInt(input.substring(i, i + 1));
-			result = result + mul * value;
-			mul = mul * 10;
-		}
-		return result;
-	}
 
 	private String[] getTimeElement(String input) {
 		String[] element = new String[3];

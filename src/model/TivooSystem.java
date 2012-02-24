@@ -5,7 +5,9 @@ import output.HTMLWriter;
 import output.SummaryPageHTMLWriter;
 
 import parser.DukeParser;
+import parser.DukecalParser;
 import parser.GoogleParser;
+import parser.NFLParser;
 import parser.Parser;
 import processor.Processor;
 import processor.ProcessorFactory;
@@ -20,12 +22,15 @@ public class TivooSystem {
 		nodes = new ArrayList<Node>();
 		parsers.add(new GoogleParser());
 		parsers.add(new DukeParser());
+		parsers.add(new DukecalParser());
+		parsers.add(new NFLParser());
 	}
 
 	public void loadFile(String filename) {
 		for (Parser p : parsers) {
 			if (p.isThisType(filename)) {
-				nodes = p.parseCalender(filename);
+				//nodes = p.parseCalender(filename);
+				addToList(p.parseCalender(filename));
 				break;
 			}
 		}			
@@ -41,5 +46,11 @@ public class TivooSystem {
 	public void outputToHtml(String detailsFile, String summaryFile) {
 		HTMLWriter writer = new SummaryPageHTMLWriter();
 		writer.makeFile(detailsFile, summaryFile, nodes);	
+	}
+	
+	private void addToList(ArrayList<Node> list){
+		for(Node n: list){
+			nodes.add(n);
+		}
 	}
 }

@@ -87,5 +87,16 @@ public abstract class Parser {
 	protected DateTimeFormatter getFmt() {
 		return fmt;
 	}
+	
+	protected int stringToInteger(String input) {
+		int result = 0;
+		int mul = 1;
+		for (int i = input.length() - 1; i >= 0; i--) {
+			int value = Integer.parseInt(input.substring(i, i + 1));
+			result = result + mul * value;
+			mul = mul * 10;
+		}
+		return result;
+	}
 
 }

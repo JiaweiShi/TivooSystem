@@ -52,4 +52,12 @@ public class Node implements Comparable<Node>{
 	{
 	    return description;
 	}
+	
+	public String getType(){
+		return type;
+	}
+	
+	public HashMap<String,ArrayList<String>> getMapInformation(){
+		return map;
+	}
 }
