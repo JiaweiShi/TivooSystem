@@ -1,14 +1,9 @@
 package model;
 import java.util.*;
 
-import output.HTMLWriter;
-import output.SummaryPageHTMLWriter;
-
-import parser.DukeParser;
-import parser.GoogleParser;
-import parser.Parser;
-import processor.Processor;
-import processor.ProcessorFactory;
+import output.*;
+import parser.*;
+import processor.*;
 
 public class TivooSystem {
 
@@ -20,6 +15,7 @@ public class TivooSystem {
 		nodes = new ArrayList<Node>();
 		parsers.add(new GoogleParser());
 		parsers.add(new DukeParser());
+		parsers.add(new TVParser());
 	}
 
 	public void loadFile(String filename) {
