@@ -106,7 +106,7 @@ public abstract class Parser {
 				}
 			}
 		}
-		checkMap(map);
+		//checkMap(map);
 		return map;
 	}
 	
