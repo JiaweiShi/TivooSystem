@@ -41,8 +41,4 @@ public class NFLParser extends Parser{
 		return row.getChildText("Col15");
 	}
 	
-	public HashMap<String, ArrayList<String>> getMap(Element row) {
-		return null;
-	}
-	
 }

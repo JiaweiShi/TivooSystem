@@ -39,10 +39,6 @@ public class DukecalParser extends Parser{
 		return event.getChildText("description");
 	}
 	
-	public HashMap<String, ArrayList<String>> getMap(Element calendar) {
-		return null;
-	}
-	
 	private DateTime getTimeInfo(Element element){
 		int year = stringToInteger(element.getChild("fourdigityear").getText());
 		int month = stringToInteger(element.getChild("twodigitmonth").getText());
