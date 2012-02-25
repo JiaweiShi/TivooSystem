@@ -45,6 +45,16 @@ public class TivooSystem {
 		processor = new ProcessorFactory().getProcessor(filterType);
 		nodes = processor.process(nodes, keywords);
 	}
+	
+	public void sort(String sortType){
+		processor = new ProcessorFactory().getProcessor(sortType);
+		nodes = processor.process(nodes, null);
+	}
+	
+	public void reverse(){
+		processor = new ProcessorFactory().getProcessor("Reverse");
+		nodes = processor.process(nodes, null);
+	}
 
 
 	public void outputToHtml(String detailsFile, String summaryFile) {
