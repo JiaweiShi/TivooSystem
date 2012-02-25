@@ -1,7 +1,5 @@
 package parser;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import org.jdom.Element;
 import org.joda.time.DateTime;

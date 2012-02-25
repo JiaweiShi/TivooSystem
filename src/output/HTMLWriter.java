@@ -3,7 +3,7 @@ package output;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import model.Node;
 
@@ -22,9 +22,9 @@ import com.hp.gagawa.java.elements.Ul;
 
 public abstract class HTMLWriter {
     
-    public abstract void makeBody(Body body, ArrayList<Node> events, String detailsFile);
+    public abstract void makeBody(Body body, List<Node> events, String detailsFile);
     
-    public void makeFile(String detailsFile, String summaryFile, ArrayList<Node> events)
+    public void makeFile(String detailsFile, String summaryFile, List<Node> events)
     {
         Html html = setupHtml("Output File");
         Body body = new Body();

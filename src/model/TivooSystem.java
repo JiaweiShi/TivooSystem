@@ -1,8 +1,6 @@
 package model;
 import java.util.*;
-import output.*;
 import parser.*;
-import processor.*;
 
 import output.HTMLWriter;
 import output.SummaryPageHTMLWriter;
@@ -17,7 +15,7 @@ import processor.ProcessorFactory;
 
 public class TivooSystem {
 
-	private ArrayList<Node> nodes;
+	private List<Node> nodes;
 	private List<Parser> parsers = new ArrayList<Parser>();
 	private Processor processor;
 
@@ -48,12 +46,12 @@ public class TivooSystem {
 	
 	public void sort(String sortType){
 		processor = new ProcessorFactory().getProcessor(sortType);
-		nodes = processor.process(nodes, null);
+		nodes = processor.process(nodes, sortType);
 	}
 	
 	public void reverse(){
 		processor = new ProcessorFactory().getProcessor("Reverse");
-		nodes = processor.process(nodes, null);
+		nodes = processor.process(nodes, "Reverse");
 	}
 
 
@@ -62,7 +60,7 @@ public class TivooSystem {
 		writer.makeFile(detailsFile, summaryFile, nodes);	
 	}
 	
-	private void addToList(ArrayList<Node> list){
+	private void addToList(List<Node> list){
 		for(Node n: list){
 			nodes.add(n);
 		}

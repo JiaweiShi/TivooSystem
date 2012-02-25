@@ -20,7 +20,7 @@ public class Main {
 		//t.loadFile("googlecal.xml");
 		//t.loadFile("DukeBasketBall.xml");
 		//.loadFile("dukecal.xml");
-		//t.loadFile("NFL.xml");
+		t.loadFile("NFL.xml");
 		//t.loadFile("tele.xml");
 		//t.filter("FilterByKeywords", "CS","10");
 		//t.filter("FilterByDate", "7/1/2011", "3/4/2012");

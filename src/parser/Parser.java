@@ -11,7 +11,7 @@ import org.jdom.input.SAXBuilder;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-import parser.ParserException.Type;
+
 
 public abstract class Parser {
 	
@@ -51,9 +51,9 @@ public abstract class Parser {
 		}
 	}
 	
-	public ArrayList<Node> parseCalender(String filename) {
+	public List<Node> parseCalender(String filename) {
 		
-		ArrayList<Node> nodes = new ArrayList<Node>();
+		List<Node> nodes = new ArrayList<Node>();
 		
 		try {
             Document doc = builder.build(new File(filename));

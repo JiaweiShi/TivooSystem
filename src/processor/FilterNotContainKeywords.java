@@ -1,13 +1,14 @@
 package processor;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import model.Node;
 
 public class FilterNotContainKeywords extends Processor {
-	public ArrayList<Node> process(ArrayList<Node> nodes,
-			ArrayList<String> keyWords) {
-		ArrayList<Node> filteredNodes = new ArrayList<Node>();
+	public List<Node> process(List<Node> nodes,
+			List<String> keyWords) {
+		List<Node> filteredNodes = new ArrayList<Node>();
 		for (Node node : nodes) {
 			String str = node.getTitle();
 
@@ -18,9 +19,9 @@ public class FilterNotContainKeywords extends Processor {
 	}
 
 	@Override
-	public ArrayList<Node> process(ArrayList<Node> nodes, String... keyWords) {
+	public List<Node> process(List<Node> nodes, String... keyWords) {
 		if (keyWords.length >= 1) {
-			ArrayList<String> list = storeArrayToList(keyWords);
+			List<String> list = storeArrayToList(keyWords);
 			return process(nodes, list);
 		}
 
@@ -28,8 +29,8 @@ public class FilterNotContainKeywords extends Processor {
 		// throw new ParserException();
 	}
 
-	private ArrayList<String> storeArrayToList(String... keyWords) {
-		ArrayList<String> list = new ArrayList<String>();
+	private List<String> storeArrayToList(String... keyWords) {
+		List<String> list = new ArrayList<String>();
 		for (String a : keyWords) {
 			list.add(a);
 		}
@@ -37,7 +38,7 @@ public class FilterNotContainKeywords extends Processor {
 
 	}
 
-	private boolean notContainKeyWord(String input, ArrayList<String> list) {
+	private boolean notContainKeyWord(String input, List<String> list) {
 		for (String s : list) {
 			if (input.contains(s))
 				return false;;

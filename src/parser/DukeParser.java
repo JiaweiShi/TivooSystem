@@ -1,7 +1,5 @@
 package parser;
 
-import java.util.*;
-
 
 import org.jdom.Element;
 import org.joda.time.DateTime;

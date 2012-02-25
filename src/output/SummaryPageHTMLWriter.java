@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 
 import model.Node;
@@ -40,7 +41,7 @@ public class SummaryPageHTMLWriter extends HTMLWriter {
     
 
     
-    public void makeBody(Body body, ArrayList<Node> events, String detailsFile)
+    public void makeBody(Body body, List<Node> events, String detailsFile)
     {
         
         int count = 0;
