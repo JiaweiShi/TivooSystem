@@ -22,7 +22,7 @@ import com.hp.gagawa.java.elements.Ul;
 
 public abstract class HTMLWriter {
     
-    public abstract void makeBody(Body body, List<Node> events, String detailsFile);
+    public abstract void makeBody(Body body, List<?> events, String detailsFile);
     
     public void makeFile(String detailsFile, String summaryFile, List<Node> events)
     {

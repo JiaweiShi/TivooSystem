@@ -10,12 +10,12 @@ import com.hp.gagawa.java.elements.H1;
 import com.hp.gagawa.java.elements.Ul;
 
 public class ListHTMLWriter extends HTMLWriter{
-    public void makeBody(Body body, List<Node> events, String detailsFile)
+    public void makeBody(Body body, List<?> events, String detailsFile)
     {
-        
+        List<Node> eventList = (List<Node>) events;
         int count = 0;        
         Ul list = new Ul();        
-        for(Node event: events)
+        for(Node event: eventList)
         {
             String detailPageLocation = detailsFile+"/" + count +".html";
             makeDetailsPage(event, detailPageLocation);

@@ -41,9 +41,10 @@ public class SummaryPageHTMLWriter extends HTMLWriter {
     
 
     
-    public void makeBody(Body body, List<Node> events, String detailsFile)
+    public void makeBody(Body body, List<?> events, String detailsFile)
     {
         
+        List<Node> eventsList = (List<Node>) events;
         int count = 0;
         
         Ul[] dayList = new Ul[7];
@@ -54,7 +55,7 @@ public class SummaryPageHTMLWriter extends HTMLWriter {
         
         
         
-        for(Node event: events)
+        for(Node event: eventsList)
         {
             String detailPageLocation = detailsFile+"/" + count +".html";
             makeDetailsPage(event, detailPageLocation);
