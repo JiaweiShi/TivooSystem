@@ -4,8 +4,6 @@ import java.util.Comparator;
 
 public class EndTimeComparator implements Comparator<Node> { 
 
-
-
     public int compare (Node left, Node right)
     {
          if(left.getEnd().isBefore(right.getEnd()))
