@@ -19,16 +19,16 @@ public class Main {
 		//t.filter("FilterByDate", "3/1/2012", "3/4/2012");
 		//t.loadFile("googlecal.xml");
 		//t.loadFile("DukeBasketBall.xml");
-		//.loadFile("dukecal.xml");
-		t.loadFile("NFL.xml");
-		//t.loadFile("tele.xml");
+		//t.loadFile("dukecal.xml");
+		//t.loadFile("NFL.xml");
+		t.loadFile("tele.xml");
 		//t.filter("FilterByKeywords", "CS","10");
 		//t.filter("FilterByDate", "7/1/2011", "3/4/2012");
 		t.filter("SortByTitle");
-		//t.filter("FilterByDay", "11/01/2011");
-		t.filter("FilterByWeek", "10/31/2011");
-		//t.filter("FilterByMonth", "11/2011");
-		t.reverse();
+		t.filter("FilterByDay", "11/01/2011");
+		//t.filter("FilterByWeek", "10/31/2011");
+		//t.filter("FilterByMonth", "9/2011");
+		//t.reverse();
 		//t.filter("Conflicting");
 		t.outputToHtml("details","summary.html");
 			
