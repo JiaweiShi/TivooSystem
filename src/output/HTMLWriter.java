@@ -89,7 +89,7 @@ public abstract class HTMLWriter {
         A eventLink = new A();
         eventListElement.appendChild(eventLink);
         P times = new P();
-        times.appendText(event.getStart().toString("hh:mm")+" - " + event.getEnd().toString("hh:mm"));
+        times.appendText(event.getStart().toString("MM/dd/yy hh:mm")+" - " + event.getEnd().toString("MM/dd/yy hh:mm"));
         eventListElement.appendChild(times);       
         eventLink.setHref(detailPageLocation);
         eventLink.appendText(event.getTitle());
