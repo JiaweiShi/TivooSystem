@@ -5,8 +5,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/gagawa"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JDOM"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/joda"/>
-	<classpathentry kind="lib" path="C:/Users/Larry/Documents/CS108/Assignment/Tivoo/gagawa-1.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Larry/Documents/CS108/Assignment/Tivoo/jdom/build/jdom-1.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Larry/Documents/CS108/Assignment/Tivoo/jdom/joda-time-2.0/joda-time-2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/prithvi/Documents/Aptana Studio 3 Workspace/External Jars/gagawa-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/prithvi/Documents/Aptana Studio 3 Workspace/External Jars/jdom-1.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/prithvi/Documents/Aptana Studio 3 Workspace/External Jars/joda-time-2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

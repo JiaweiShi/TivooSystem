@@ -1,5 +1,6 @@
 package model;
 import java.util.*;
+
 import parser.*;
 
 import output.HTMLWriter;
@@ -41,23 +42,23 @@ public class TivooSystem {
 	public void filter(String filterType, String...keywords) {
 		//options for filterType = "FilterByDate", "FilterByKeywords" for now
 		processor = new ProcessorFactory().getProcessor(filterType);
-		nodes = processor.process(nodes, keywords);
+		nodes = (ArrayList<Node>) processor.process(nodes, keywords);
 	}
 	
 	public void sort(String sortType){
 		processor = new ProcessorFactory().getProcessor(sortType);
-		nodes = processor.process(nodes, sortType);
+		nodes = (ArrayList<Node>) processor.process(nodes, sortType);
 	}
 	
 	public void reverse(){
 		processor = new ProcessorFactory().getProcessor("Reverse");
-		nodes = processor.process(nodes, "Reverse");
+		nodes = (ArrayList<Node>) processor.process(nodes, "Reverse");
 	}
 
 
 	public void outputToHtml(String detailsFile, String summaryFile) {
 		HTMLWriter writer = new SummaryPageHTMLWriter();
-		writer.makeFile(detailsFile, summaryFile, nodes);	
+		writer.makeFile(detailsFile, summaryFile, (ArrayList<Node>) nodes);	
 	}
 	
 	private void addToList(List<Node> list){

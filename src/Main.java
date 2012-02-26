@@ -14,7 +14,7 @@ public class Main {
 	public static void main(String[] args){
 		
 		TivooSystem t = new TivooSystem();
-		t.loadFile("googlecal.xml");
+		//t.loadFile("googlecal.xml");
 		//t.filter("FilterByKeywords", "State");
 		//t.filter("FilterByDate", "3/1/2012", "3/4/2012");
 		//t.loadFile("googlecal.xml");
@@ -25,7 +25,11 @@ public class Main {
 		//t.filter("FilterByKeywords", "CS","10");
 		//t.filter("FilterByDate", "7/1/2011", "3/4/2012");
 		t.filter("SortByTitle");
+		//t.filter("FilterByDay", "11/01/2011");
+		t.filter("FilterByWeek", "10/31/2011");
+		//t.filter("FilterByMonth", "11/2011");
 		t.reverse();
+		//t.filter("Conflicting");
 		t.outputToHtml("details","summary.html");
 			
 	}
