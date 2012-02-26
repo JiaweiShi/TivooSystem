@@ -49,4 +49,8 @@ public class FilterByKeywords extends Processor {
 		}
 		return true;
 	}
+	public String getString()
+	{
+	    return "FilterByKeywords";
+	}
 }

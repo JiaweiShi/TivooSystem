@@ -45,5 +45,9 @@ public class FilterNotContainKeywords extends Processor {
 		}
 		return true;
 	}
+	public String getString()
+	{
+	    return "FilterNotContainKeywords";
+	}
 
 }

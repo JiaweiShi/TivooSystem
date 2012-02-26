@@ -14,4 +14,9 @@ public class SortByTitle extends Processor {
 		Collections.sort(result, new TitleComparator());
 		return result;
 	}
+	
+	public String getString()
+	{
+	    return "SortByTitle";
+	}
 }

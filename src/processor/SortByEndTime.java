@@ -15,5 +15,10 @@ public class SortByEndTime extends Processor{
 		Collections.sort(result, new EndTimeComparator());
 		return result;
 	}
+	
+	public String getString()
+	{
+	    return "SortByEndTime";
+	}
 
 }

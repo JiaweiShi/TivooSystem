@@ -31,4 +31,9 @@ public class FilterByMonth extends Processor {
 			return process(nodes, keyWords[0]);
 		return null;
 	}
+	
+	public String getString()
+	{
+	    return "FilterByMonth";
+	}
 }

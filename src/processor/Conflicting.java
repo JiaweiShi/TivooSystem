@@ -33,4 +33,9 @@ public class Conflicting extends Processor {
 	public List<ArrayList<Node>> process(List<Node> nodes, String... keyWords) {
 		return process(nodes);
 	}
+	
+	public String getString()
+	{
+	    return "Conflict";
+	}
 }

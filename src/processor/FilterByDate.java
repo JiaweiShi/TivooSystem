@@ -32,4 +32,9 @@ public class FilterByDate extends Processor {
 			return process(nodes, keyWords[0], keyWords[1]);
 		return null;
 	}
+	
+	public String getString()
+	{
+	    return "FilterByDate";
+	}
 }

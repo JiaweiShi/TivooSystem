@@ -14,5 +14,8 @@ public class Reverse extends Processor{
 		}
 		return result;
 	}
-
+	public String getString()
+	{
+	    return "Reverse";
+	}
 }

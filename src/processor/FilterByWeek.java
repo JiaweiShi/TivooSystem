@@ -36,4 +36,9 @@ public class FilterByWeek extends Processor {
 			return process(nodes, keyWords[0]);
 		return null;
 	}
+	
+	public String getString()
+	{
+	    return "FilterByWeek";
+	}
 }

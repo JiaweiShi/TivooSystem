@@ -31,4 +31,9 @@ public class FilterByDay extends Processor {
 			return process(nodes, keyWords[0]);
 		return null;
 	}
+	
+	public String getString()
+	{
+	    return "FilterByDay";
+	}
 }

@@ -16,4 +16,8 @@ public class SortByStartTime extends Processor{
 		return result;
 	}
 
+	public String getString()
+	{
+	    return "SortByStartTime";
+	}
 }
