@@ -27,18 +27,7 @@ import com.hp.gagawa.java.elements.Ul;
 
 public class SummaryPageHTMLWriter extends HTMLWriter {
     
-    private static final TreeMap<Integer, String> dayMap = new TreeMap<Integer, String>();
-    static      
-    {
-            dayMap.put(0, "Monday");
-            dayMap.put(1, "Tuesday");
-            dayMap.put(2, "Wednesday");
-            dayMap.put(3, "Thursday");
-            dayMap.put(4, "Friday");
-            dayMap.put(5, "Saturday");
-            dayMap.put(6, "Sunday");
-    }
-    
+
 
     
     public void makeBody(Body body, List<?> events, String detailsFile)
@@ -69,7 +58,7 @@ public class SummaryPageHTMLWriter extends HTMLWriter {
         {
             H1 dayHeader = new H1();
             body.appendChild(dayHeader);
-            dayHeader.appendText(dayMap.get(i));
+            dayHeader.appendText(days[i]);
             body.appendChild(dayList[i]);
         }
         

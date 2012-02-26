@@ -18,7 +18,7 @@ import com.hp.gagawa.java.elements.Ul;
 
 public class MonthHTMLWriter extends HTMLWriter {
 
-    private static final String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    
     private static final TreeMap<Integer, Integer> monthMap = new TreeMap<Integer, Integer>();
     static      
     {

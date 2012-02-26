@@ -4,9 +4,11 @@ import java.util.*;
 import parser.*;
 
 import output.ConflictsHTMLWriter;
+import output.DayHTMLWriter;
 import output.HTMLWriter;
 import output.MonthHTMLWriter;
 import output.SummaryPageHTMLWriter;
+import output.WeekHTMLWriter;
 
 import parser.DukeParser;
 import parser.DukecalParser;
@@ -59,7 +61,7 @@ public class TivooSystem {
 
 
 	public void outputToHtml(String detailsFile, String summaryFile) {
-		HTMLWriter writer = new DayHTMLWriter();
+		HTMLWriter writer = new WeekHTMLWriter();
 		writer.makeFile(detailsFile, summaryFile, (ArrayList<Node>) nodes);	
 	}
 	

@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import java.util.TreeMap;
 
 import model.Node;
 
@@ -23,6 +24,8 @@ import com.hp.gagawa.java.elements.Ul;
 public abstract class HTMLWriter {
     
     public abstract void makeBody(Body body, List<?> events, String detailsFile);
+    protected static final String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    
     
     public void makeFile(String detailsFile, String summaryFile, List<Node> events)
     {
