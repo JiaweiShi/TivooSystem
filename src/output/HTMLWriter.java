@@ -3,7 +3,8 @@ package output;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeMap;
 
 import model.Node;
 
@@ -22,9 +23,11 @@ import com.hp.gagawa.java.elements.Ul;
 
 public abstract class HTMLWriter {
     
-    public abstract void makeBody(Body body, ArrayList<Node> events, String detailsFile);
+    public abstract void makeBody(Body body, List<?> events, String detailsFile);
+    protected static final String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
     
-    public void makeFile(String detailsFile, String summaryFile, ArrayList<Node> events)
+    
+    public void makeFile(String detailsFile, String summaryFile, List<Node> events)
     {
         Html html = setupHtml("Output File");
         Body body = new Body();
@@ -89,7 +92,7 @@ public abstract class HTMLWriter {
         A eventLink = new A();
         eventListElement.appendChild(eventLink);
         P times = new P();
-        times.appendText(event.getStart().toString("hh:mm")+" - " + event.getEnd().toString("hh:mm"));
+        times.appendText(event.getStart().toString("MM/dd/yy hh:mm")+" - " + event.getEnd().toString("MM/dd/yy hh:mm"));
         eventListElement.appendChild(times);       
         eventLink.setHref(detailPageLocation);
         eventLink.appendText(event.getTitle());

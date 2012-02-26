@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 
 import model.Node;
@@ -26,23 +27,13 @@ import com.hp.gagawa.java.elements.Ul;
 
 public class SummaryPageHTMLWriter extends HTMLWriter {
     
-    private static final TreeMap<Integer, String> dayMap = new TreeMap<Integer, String>();
-    static      
-    {
-            dayMap.put(0, "Monday");
-            dayMap.put(1, "Tuesday");
-            dayMap.put(2, "Wednesday");
-            dayMap.put(3, "Thursday");
-            dayMap.put(4, "Friday");
-            dayMap.put(5, "Saturday");
-            dayMap.put(6, "Sunday");
-    }
-    
+
 
     
-    public void makeBody(Body body, ArrayList<Node> events, String detailsFile)
+    public void makeBody(Body body, List<?> events, String detailsFile)
     {
         
+        List<Node> eventsList = (List<Node>) events;
         int count = 0;
         
         Ul[] dayList = new Ul[7];
@@ -53,7 +44,7 @@ public class SummaryPageHTMLWriter extends HTMLWriter {
         
         
         
-        for(Node event: events)
+        for(Node event: eventsList)
         {
             String detailPageLocation = detailsFile+"/" + count +".html";
             makeDetailsPage(event, detailPageLocation);
@@ -67,7 +58,7 @@ public class SummaryPageHTMLWriter extends HTMLWriter {
         {
             H1 dayHeader = new H1();
             body.appendChild(dayHeader);
-            dayHeader.appendText(dayMap.get(i));
+            dayHeader.appendText(days[i]);
             body.appendChild(dayList[i]);
         }
         

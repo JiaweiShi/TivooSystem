@@ -1,9 +1,10 @@
 package processor;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import model.Node;
 
 public abstract class Processor {
-	public abstract ArrayList<Node> process(ArrayList<Node> nodes, String...keyWords);
+	public abstract List<?> process(List<Node> nodes, String...keyWords);
+	public abstract String getString();
 }
