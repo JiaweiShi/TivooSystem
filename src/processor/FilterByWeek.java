@@ -18,10 +18,8 @@ public class FilterByWeek extends Processor {
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("M/d/yyy");
 		DateTime first = fmt.parseDateTime(weekDate);
 		DateTime last = first.plusDays(6);
-		System.out.println();
 		for(Node node: nodes)
 		{
-			System.out.println();
 			if((node.getStart().isAfter(first) && node.getEnd().isBefore(last)) || 
 					(node.getStart().isBefore(first) && node.getEnd().isAfter(first)) ||
 					(node.getStart().isBefore(last) && node.getEnd().isAfter(last)))

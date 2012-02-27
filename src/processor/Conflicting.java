@@ -36,6 +36,6 @@ public class Conflicting extends Processor {
 	
 	public String getString()
 	{
-	    return "Conflict";
+	    return "Conflicting";
 	}
 }

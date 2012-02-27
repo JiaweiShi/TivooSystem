@@ -39,7 +39,7 @@ public class TivooSystem {
 		HTMLWriter month = new MonthHTMLWriter();
 		HTMLWriter conflict = new ConflictsHTMLWriter();
 		HTMLWriter list = new ListHTMLWriter();
-		
+
 		processorToHTMLWriter.put("SortByStartTime", list);
 		processorToHTMLWriter.put("SortByEndTime", list);
 		processorToHTMLWriter.put("SortByTitle", list);
@@ -51,6 +51,7 @@ public class TivooSystem {
 		processorToHTMLWriter.put("FilterByDay", day);
 		processorToHTMLWriter.put("FilterByWeek", week);
 		processorToHTMLWriter.put("Conflicting", conflict);
+		processorToHTMLWriter.put("FilterByActor", list);
 	}
 
 	public void loadFile(String filename) {
@@ -68,12 +69,12 @@ public class TivooSystem {
 		processor = new ProcessorFactory().getProcessor(filterType);
 		nodes = (ArrayList<Node>) processor.process(nodes, keywords);
 	}
-	
+
 	public void sort(String sortType){
 		processor = new ProcessorFactory().getProcessor(sortType);
 		nodes = (ArrayList<Node>) processor.process(nodes, sortType);
 	}
-	
+
 	public void reverse(){
 		processor = new ProcessorFactory().getProcessor("Reverse");
 		nodes = (ArrayList<Node>) processor.process(nodes, "Reverse");
@@ -81,7 +82,8 @@ public class TivooSystem {
 
 
 	public void outputToHtml(String detailsFile, String summaryFile) {
-	    HTMLWriter writer;
+
+		HTMLWriter writer;
 	    if(processor == null) 
 	        writer = new ListHTMLWriter();
 	    else{
@@ -89,7 +91,7 @@ public class TivooSystem {
 	    }
 		writer.makeFile(detailsFile, summaryFile, (ArrayList<Node>) nodes);	
 	}
-	
+
 	private void addToList(List<Node> list){
 		for(Node n: list){
 			nodes.add(n);
