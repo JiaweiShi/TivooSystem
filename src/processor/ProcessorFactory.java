@@ -1,5 +1,4 @@
 package processor;
-import java.lang.reflect.*;
 
 
 
@@ -8,7 +7,7 @@ public class ProcessorFactory {
 	{
 		try {
 			String fullName = "processor."+name;
-			Class processor = Class.forName(fullName);
+			Class<?> processor = Class.forName(fullName);
 			return (Processor) processor.newInstance();
 		} catch(ClassNotFoundException e) {
 			System.out.println("ClassNotFound"); //add this to our exception class and handle these

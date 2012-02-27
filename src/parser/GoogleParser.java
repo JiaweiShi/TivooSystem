@@ -37,14 +37,14 @@ public class GoogleParser extends Parser {
 	}
 	
 	public DateTime getStartTime(Element entry){
-		List childrenList = entry.getChildren();
+		List<?> childrenList = entry.getChildren();
 		Element element = getContentElement(childrenList);
 		String timeInfo = getTimeInfo(element);
 		return startTime(timeInfo);
 	}
 	
 	public DateTime getEndTime(Element entry){
-		List childrenList = entry.getChildren();
+		List<?> childrenList = entry.getChildren();
 		Element element = getContentElement(childrenList);
 		String timeInfo = getTimeInfo(element);
 		DateTime startTime = startTime(timeInfo);
@@ -52,18 +52,18 @@ public class GoogleParser extends Parser {
 	}
 	
 	public String getTitle(Element entry){
-		List childrenList = entry.getChildren();
+		List<?> childrenList = entry.getChildren();
 		return getTitleElement(childrenList).getText();
 	}
 	
 	public String getDescription(Element entry){
-		List childrenList = entry.getChildren();
+		List<?> childrenList = entry.getChildren();
 		return getContentElement(childrenList).getText();
 	}
 	
-	public HashMap<String, ArrayList<String>> getMap(Element entry){
-		return null;
-	}
+//	public HashMap<String, ArrayList<String>> getMap(Element entry){
+//		return null;
+//	}
 
 	private String getTimeInfo(Element element) {
 		String info = element.getText();
@@ -198,7 +198,7 @@ public class GoogleParser extends Parser {
 		return 0;
 	}
 
-	private Element getTitleElement(List list) {
+	private Element getTitleElement(List<?> list) {
 		for (int i = 0; i < list.size(); i++) {
 			Element node = (Element) list.get(i);
 			if (node.getName().equals("title"))
@@ -207,7 +207,7 @@ public class GoogleParser extends Parser {
 		return null;
 	}
 
-	private Element getContentElement(List list) {
+	private Element getContentElement(List<?> list) {
 		for (int i = 0; i < list.size(); i++) {
 			Element node = (Element) list.get(i);
 			if (node.getName().equals("content"))
