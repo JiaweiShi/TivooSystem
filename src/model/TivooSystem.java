@@ -51,6 +51,7 @@ public class TivooSystem {
 		processorToHTMLWriter.put("FilterByDay", day);
 		processorToHTMLWriter.put("FilterByWeek", week);
 		processorToHTMLWriter.put("Conflicting", conflict);
+		processorToHTMLWriter.put("FilterByActor", list);
 	}
 
 	public void loadFile(String filename) {
@@ -81,7 +82,8 @@ public class TivooSystem {
 
 
 	public void outputToHtml(String detailsFile, String summaryFile) {
-	    HTMLWriter writer;
+	    
+		HTMLWriter writer;
 	    if(processor == null) 
 	        writer = new ListHTMLWriter();
 	    else{
