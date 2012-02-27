@@ -24,7 +24,7 @@ public class ConflictsHTMLWriter extends HTMLWriter {
         for(int i=0; i<conflicts.size() ; i++)
         {
             H2 subHeading = new H2();
-            subHeading.appendText("Conflict "+(i+1)+":");
+            subHeading.appendText("Conflicts for "+conflicts.get(i).get(0).getTitle()+":");
             body.appendChild(subHeading);
             List<Node> conflict = conflicts.get(i);
             Ul conflictList = new Ul();
