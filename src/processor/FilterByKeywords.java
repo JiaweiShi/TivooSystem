@@ -16,8 +16,9 @@ public class FilterByKeywords extends Processor {
 			HashMap<String, ArrayList<String>> map = node.getMapInformation();
 			if (map != null) {
 				for (List<String> list : map.values()) {
-//					System.out.println(list);
+					//System.out.println(list);
 					for (String str : list) {
+						//System.out.println(str);
 						if (containKeyWord(str, keyWords)) {
 							found = true;
 							filteredNodes.add(node);
@@ -42,7 +43,6 @@ public class FilterByKeywords extends Processor {
 		
 	}
 
-	@Override
 	public List<Node> process(List<Node> nodes, String... keyWords) {
 		if (keyWords.length >= 1) {
 			List<String> list = new ArrayList<String>(Arrays.asList(keyWords));

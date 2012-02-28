@@ -14,12 +14,13 @@ public class Main {
 	public static void main(String[] args){
 
 		TivooSystem t = new TivooSystem();
-		t.loadFile("googlecal.xml");
-		//t.loadFile("DukeBasketBall.xml");
+		//t.loadFile("googlecal.xml");
+		t.loadFile("DukeBasketBall.xml");
 //		t.loadFile("dukecal.xml");
 		//t.loadFile("NFL.xml");
 //		t.loadFile("tele.xml");
-		t.filter("FilterByKeywords", "CS","10");
+		//t.filter("FilterByKeywords", "State");
+		t.filter("FilterNotContainKeywords", "State");
 		//t.filter("FilterByDate", "7/1/2011", "3/4/2012");
 //		t.filter("SortByTitle");
 		//t.filter("FilterByDay", "11/11/2011");
