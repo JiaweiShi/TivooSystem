@@ -1,22 +1,19 @@
 package processor;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
+import java.util.Comparator;
 
 import model.Node;
 import model.TitleComparator;
 
-public class SortByTitle extends Processor {
+public class SortByTitle extends Sorter {
 
-	public List<Node> process(List<Node> nodes, String...keyWords){
-		List<Node> result = new ArrayList<Node>(nodes);
-		Collections.sort(result, new TitleComparator());
-		return result;
-	}
-	
 	public String getString()
 	{
 	    return "SortByTitle";
+	}
+
+	public Comparator<Node> getComparator() {
+		return new TitleComparator();
 	}
 }

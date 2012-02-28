@@ -1,24 +1,19 @@
 package processor;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
-import model.EndTimeComparator;
+import java.util.Comparator;
+
 import model.Node;
+import model.EndTimeComparator;
 
+public class SortByEndTime extends Sorter {
 
-public class SortByEndTime extends Processor{
-	
-	public List<Node> process(List<Node> nodes, String...keyWords){
-		List<Node> result = new ArrayList<Node>(nodes);
-		Collections.sort(result, new EndTimeComparator());
-		return result;
-	}
-	
 	public String getString()
 	{
 	    return "SortByEndTime";
 	}
 
+	public Comparator<Node> getComparator() {
+		return new EndTimeComparator();
+	}
 }

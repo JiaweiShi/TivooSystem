@@ -11,6 +11,7 @@ import org.joda.time.format.DateTimeFormatter;
 
 
 
+
 public class FilterByDate extends Processor {
 	public List<Node> process(List<Node> nodes, String begDate, String endDate)
 	{
