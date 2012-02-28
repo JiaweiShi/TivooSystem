@@ -1,50 +1,42 @@
 package processor;
 
 import java.util.ArrayList;
+//import java.util.HashMap;
 import java.util.List;
 
 import model.Node;
 
-public class FilterNotContainKeywords extends Processor{
-	public List<Node> process(List<Node> nodes,
-			List<String> keyWords) {
-		List<Node> filteredNodes = new ArrayList<Node>();
-		for (Node node : nodes) {
-			String str = node.getTitle();
-
-			if (notContainKeyWord(str, keyWords))
-				filteredNodes.add(node);
-		}
-		return filteredNodes;
-	}
+public class FilterNotContainKeywords extends FilterByKeywords{
 
 	@Override
 	public List<Node> process(List<Node> nodes, String... keyWords) {
-		if (keyWords.length >= 1) {
-			List<String> list = storeArrayToList(keyWords);
-			return process(nodes, list);
+		List<Node> filteredNodes = super.process(nodes, keyWords);
+		List<Node> reverseFilter = new ArrayList<Node>();
+		for (Node node : nodes)
+		{
+			if(!filteredNodes.contains(node))
+				reverseFilter.add(node);
 		}
-
-		return null;
+		return reverseFilter;
 		// throw new ParserException();
 	}
 
-	private List<String> storeArrayToList(String... keyWords) {
-		List<String> list = new ArrayList<String>();
-		for (String a : keyWords) {
-			list.add(a);
-		}
-		return list;
-
-	}
-
-	public boolean notContainKeyWord(String input, List<String> list) {
-		for (String s : list) {
-			if (input.contains(s))
-				return false;
-		}
-		return true;
-	}
+//	private List<String> storeArrayToList(String... keyWords) {
+//		List<String> list = new ArrayList<String>();
+//		for (String a : keyWords) {
+//			list.add(a);
+//		}
+//		return list;
+//
+//	}
+//
+//	public boolean notContainKeyWord(String input, List<String> list) {
+//		for (String s : list) {
+//			if (input.contains(s))
+//				return true;
+//		}
+//		return false;
+//	}
 	public String getString()
 	{
 	    return "FilterNotContainKeywords";
