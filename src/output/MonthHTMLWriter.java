@@ -22,18 +22,18 @@ public class MonthHTMLWriter extends HTMLWriter {
     private static final TreeMap<Integer, Integer> monthMap = new TreeMap<Integer, Integer>();
     static      
     {
-            monthMap.put(0, 31);
-            monthMap.put(1, 29);
-            monthMap.put(2, 31);
-            monthMap.put(3, 30);
-            monthMap.put(4, 31);
-            monthMap.put(5, 30);
-            monthMap.put(6, 31);
+            monthMap.put(1, 31);
+            monthMap.put(2, 29);
+            monthMap.put(3, 31);
+            monthMap.put(4, 30);
+            monthMap.put(5, 31);
+            monthMap.put(6, 30);
             monthMap.put(7, 31);
-            monthMap.put(8, 30);
-            monthMap.put(9, 31);
-            monthMap.put(10, 30);
-            monthMap.put(11, 31);
+            monthMap.put(8, 31);
+            monthMap.put(9, 30);
+            monthMap.put(10, 31);
+            monthMap.put(11, 30);
+            monthMap.put(12, 31);
             
             
     }
@@ -91,7 +91,7 @@ public class MonthHTMLWriter extends HTMLWriter {
         for(int i = 0; i<dayList.size() ; i++)
         {
             Td calendarElement = dayList.get(i);
-            if( i<=offset || i>= (monthMap.get(month)+offset))
+            if( i<=offset || i>= (monthMap.get(month)+offset+1))
             {
                 calendarElement.appendText("-");
                 continue;
