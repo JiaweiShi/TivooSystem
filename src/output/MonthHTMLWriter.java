@@ -52,6 +52,7 @@ public class MonthHTMLWriter extends HTMLWriter {
         for(int i=0; i<7; i++)
         {
             Tr row = new Tr();
+            row.setAttribute("valign", "top");
             calendar.appendChild(row);
             rows[i] = row;
         }
