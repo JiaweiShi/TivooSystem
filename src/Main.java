@@ -19,7 +19,7 @@ public class Main {
 //		t.loadFile("dukecal.xml");
 		//t.loadFile("NFL.xml");
 //		t.loadFile("tele.xml");
-		t.filter("FilterByKeywords", "CS","10");
+		t.filter("FilterNotContainKeywords", "CS","10");
 		//t.filter("FilterByDate", "7/1/2011", "3/4/2012");
 //		t.filter("SortByTitle");
 		//t.filter("FilterByDay", "11/11/2011");
