@@ -29,7 +29,7 @@ public class FilterByMonth extends Processor {
 
 	@Override
 	public List<Node> process(List<Node> nodes, String... keyWords) {
-		if(keyWords.length == 1)
+		if(keyWords != null && keyWords.length == 1)
 			return process(nodes, keyWords[0]);
 		return null;
 	}

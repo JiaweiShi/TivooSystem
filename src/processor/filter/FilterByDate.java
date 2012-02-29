@@ -31,7 +31,7 @@ public class FilterByDate extends Processor {
 
 	@Override
 	public List<Node> process(List<Node> nodes, String... keyWords) {
-		if(keyWords.length == 2)
+		if(keyWords != null && keyWords.length == 2)
 			return process(nodes, keyWords[0], keyWords[1]);
 		return null;
 	}

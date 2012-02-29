@@ -75,12 +75,12 @@ public class TivooSystem {
 
 	public void sort(String sortType){
 		processor = new ProcessorFactory().getProcessor(sortType, processorToClass );
-		nodes = (ArrayList<Node>) processor.process(nodes, sortType);
+		nodes = (ArrayList<Node>) processor.process(nodes);
 	}
 
-	public void reverse(){
-		processor = new ProcessorFactory().getProcessor("Reverse", processorToClass);
-		nodes = (ArrayList<Node>) processor.process(nodes, "Reverse");
+	public void reverse(String sortType){
+		processor = new ProcessorFactory().getProcessor(sortType, processorToClass);
+		nodes = (ArrayList<Node>) processor.process(nodes, "true");
 	}
 
 

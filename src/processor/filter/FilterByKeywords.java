@@ -47,7 +47,7 @@ public class FilterByKeywords extends Processor {
 	}
 
 	public List<Node> process(List<Node> nodes, String... keyWords) {
-		if (keyWords.length >= 1) {
+		if (keyWords!= null && keyWords.length >= 1) {
 			List<String> list = new ArrayList<String>(Arrays.asList(keyWords));
 			return process(nodes, list);
 		}

@@ -28,7 +28,7 @@ public class FilterByField extends Processor {
 
 	@Override
 	public List<Node> process(List<Node> nodes, String... actors) {
-		if (actors.length >= 2)
+		if (actors != null && actors.length >= 2)
 			return process(actors[0], nodes, new ArrayList<String>(Arrays.asList(actors)));
 		return null;
 	}
